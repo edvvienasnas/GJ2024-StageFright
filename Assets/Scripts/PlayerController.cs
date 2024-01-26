@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject weapon;
     [SerializeField] private int movementSpeed = 1;
-    [SerializeField] private Vector3 cameraOffset;
+    private Vector3 cameraOffset;
     private Camera playerCamera;
     private Animation weaponSwingAnim;
 
@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     {
         playerCamera = FindFirstObjectByType<Camera>();
         weaponSwingAnim = weapon.GetComponent<Animation>();
+
+        cameraOffset.y = playerCamera.transform.position.y;
+        cameraOffset.z = playerCamera.transform.position.z;
 
         weapon.SetActive(false);
     }
