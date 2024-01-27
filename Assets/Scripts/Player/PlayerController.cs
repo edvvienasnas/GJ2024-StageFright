@@ -26,10 +26,17 @@ public class PlayerController : MonoBehaviour
         // Player movement
         if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
         {
-            transform.position += new Vector3(
-                Input.GetAxisRaw("Horizontal") * movementSpeed * Time.deltaTime,
+            var moveDirection = new Vector3(
+                Input.GetAxisRaw("Horizontal"),
                 0,
-                Input.GetAxisRaw("Vertical") * movementSpeed * Time.deltaTime);
+                Input.GetAxisRaw("Vertical"));
+
+            transform.Translate(moveDirection * movementSpeed * Time.deltaTime, Space.World);
+            transform.rotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+            // transform.position += new Vector3(
+            //     Input.GetAxisRaw("Horizontal") * movementSpeed * Time.deltaTime,
+            //     0,
+            //     Input.GetAxisRaw("Vertical") * movementSpeed * Time.deltaTime);
         }
 
         // Player attacking
@@ -51,10 +58,10 @@ public class PlayerController : MonoBehaviour
     private void LateUpdate()
     {
         // Camera follow
-        // playerCamera.transform.position = new Vector3(
-        //     transform.position.x,
-        //     transform.position.y + cameraOffset.y,
-        //     transform.position.z + cameraOffset.z
-        // );
+        playerCamera.transform.position = new Vector3(
+            transform.position.x,
+            transform.position.y + cameraOffset.y,
+            transform.position.z + cameraOffset.z
+        );
     }
 }

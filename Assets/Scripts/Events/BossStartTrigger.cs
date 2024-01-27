@@ -8,6 +8,7 @@ public class BossStartTrigger : MonoBehaviour
 {
     [SerializeField] private Animation doorAnim;
     [SerializeField] private GameObject textBox, selectionBox;
+    [SerializeField] private GameObject bossHpBar;
     [SerializeField] private string text;
 
     private void OnTriggerEnter(Collider other)
@@ -28,5 +29,6 @@ public class BossStartTrigger : MonoBehaviour
     public void OpenDoor()
     {
         doorAnim.Play();
+        bossHpBar.SetActive(true);
     }
 }
