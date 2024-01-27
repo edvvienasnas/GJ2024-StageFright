@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 cameraOffset;
     private Camera playerCamera;
     private Animation weaponSwingAnim;
-    private Animator anim;
+    [HideInInspector] public Animator anim;
 
     private Vector3 moveDirection = Vector3.zero;
 

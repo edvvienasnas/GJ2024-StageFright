@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossStartTrigger : MonoBehaviour
 {
@@ -11,12 +12,20 @@ public class BossStartTrigger : MonoBehaviour
     [SerializeField] private GameObject bossHpBar;
     [SerializeField] private string text;
 
+    private PlayerController playerController;
+
+    private void Awake()
+    {
+        playerController = FindObjectOfType<PlayerController>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("Something is in trigger");
         if(other.gameObject.name == "Player")
         {
-            //Debug.Log("Player is in trigger");
+            playerController.anim.SetBool("isWalking", false);
+            playerController.enabled = false;
+
             textBox.SetActive(true);
             textBox.GetComponentInChildren<Text>().text = text;
             if(selectionBox != null)
@@ -26,9 +35,22 @@ public class BossStartTrigger : MonoBehaviour
         }
     }
 
+    public void EnablePlayerControl()
+    {
+        playerController.enabled = true;
+    }
+
     public void OpenDoor()
     {
         doorAnim.Play();
-        bossHpBar.SetActive(true);
+        StartCoroutine(OpenDoorEvent());
+        
+    }
+
+    public IEnumerator OpenDoorEvent()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+
+        SceneManager.LoadScene("BossFight");
     }
 }

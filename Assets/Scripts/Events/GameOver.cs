@@ -48,6 +48,6 @@ public class GameOver : MonoBehaviour
         nextIndicator.gameObject.SetActive(false);
         yield return new WaitForEndOfFrame();
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("level1");
     }
 }

@@ -52,6 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 8280244578652214978}
   movementSpeed: 10
+  anim: {fileID: 0}
 --- !u!114 &3291962217095909159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,9 +420,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5928395085533954453, guid: 2a1dd411a063a434ba7be6898746917f,
         type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5928395085533954453, guid: 2a1dd411a063a434ba7be6898746917f,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7e6af65983d2f0a43aeb7292018db8eb, type: 2}
+    - target: {fileID: -1206874426333947015, guid: 2a1dd411a063a434ba7be6898746917f,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -1206874426333947015, guid: 2a1dd411a063a434ba7be6898746917f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
