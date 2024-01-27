@@ -4,8 +4,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EventTrigger : MonoBehaviour
+public class BossStartTrigger : MonoBehaviour
 {
+    [SerializeField] private Animation doorAnim;
     [SerializeField] private GameObject textBox, selectionBox;
     [SerializeField] private string text;
 
@@ -22,5 +23,10 @@ public class EventTrigger : MonoBehaviour
                 selectionBox.SetActive(true);
             }
         }
+    }
+
+    public void OpenDoor()
+    {
+        doorAnim.Play();
     }
 }
