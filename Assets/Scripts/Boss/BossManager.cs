@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class BossManager : MonoBehaviour
 
     private PlayerStats playerStats;
     private int currentHp;
+    private bool isDead;
 
     private void Awake()
     {
@@ -29,7 +31,9 @@ public class BossManager : MonoBehaviour
     private void Update()
     {
         // Boss Attack
-        for(int i = 0; i < projectiles.Count; i++)
+        if(!isDead)
+        {
+            for(int i = 0; i < projectiles.Count; i++)
         {
             if(projectiles[i].transform.position.z >= attackRange.position.z)
             {
@@ -42,6 +46,20 @@ public class BossManager : MonoBehaviour
             {
                 projectiles[i].transform.position = projectiles[i].startingPos;
             }
+        }
+        }
+
+        // Boss Death
+        if(currentHp <= 0 && !isDead)
+        {
+            isDead = true;
+
+            foreach(var p in projectiles)
+            {
+                Destroy(p);
+            }
+
+            SceneManager.LoadScene("End");
         }
     }
 

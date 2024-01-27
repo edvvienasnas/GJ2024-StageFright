@@ -4262,6 +4262,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3291962217095909159, guid: 6a154c50d10977a4f83ee0e2db999d47,
         type: 3}
+      propertyPath: strength
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291962217095909159, guid: 6a154c50d10977a4f83ee0e2db999d47,
+        type: 3}
       propertyPath: hpIndicator.Array.size
       value: 3
       objectReference: {fileID: 0}
