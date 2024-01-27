@@ -2,12 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossManager : MonoBehaviour
 {
-    [SerializeField] private float projectileMoveSpeed = 1;
+    [SerializeField] private Slider healthBar;
     [SerializeField] private List<Projectile> projectiles;
+    [SerializeField] private int maxHp = 100;
+    [SerializeField] private float projectileMoveSpeed = 1;
     [SerializeField] private Transform attackRange;
+
+    private int currentHp;
+
+    private void Awake()
+    {
+        healthBar.maxValue = maxHp;
+        healthBar.value = maxHp;
+    }
 
     private void Update()
     {
