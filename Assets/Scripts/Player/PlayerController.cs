@@ -51,10 +51,10 @@ public class PlayerController : MonoBehaviour
     private void LateUpdate()
     {
         // Camera follow
-        playerCamera.transform.position = new Vector3(
-            transform.position.x,
-            transform.position.y + cameraOffset.y,
-            transform.position.z + cameraOffset.z
-        );
+        // playerCamera.transform.position = new Vector3(
+        //     transform.position.x,
+        //     transform.position.y + cameraOffset.y,
+        //     transform.position.z + cameraOffset.z
+        // );
     }
 }
