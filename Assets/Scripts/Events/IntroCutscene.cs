@@ -10,7 +10,6 @@ public class IntroCutscene : MonoBehaviour
     [SerializeField] private GameObject textBox;
     [SerializeField] private Text text;
     [SerializeField] private Text nextIndicator;
-    [SerializeField] private Image fadeout;
 
     private void Awake()
     {

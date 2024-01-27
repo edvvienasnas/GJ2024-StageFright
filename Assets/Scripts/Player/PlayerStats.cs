@@ -12,12 +12,25 @@ public class PlayerStats : MonoBehaviour
     public int strength = 1;
     [SerializeField] private List<Image> hpIndicator;
 
+    private Animator anim;
+    private bool isDead;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     private void Update()
     {
-        if(hp <= 0)
+        if(hp <= 0 && !isDead)
         {
+            isDead = true;
             Debug.Log("You died");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            anim.SetTrigger("hasDied");
+
+            GetComponent<PlayerController>().enabled = false;
+
+            StartCoroutine(FindObjectOfType<GameOver>().PlayGameOver());
         }
     }
 
