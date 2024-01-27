@@ -39,7 +39,7 @@ public class IntroCutscene : MonoBehaviour
     private IEnumerator PlayIntroCutscene()
     {
         textBox.SetActive(true);
-        yield return PrintText("Comedy is the best");
+        yield return PrintText("Comedy is the best.");
         
         while(!Input.GetButtonDown("Fire1"))
         {

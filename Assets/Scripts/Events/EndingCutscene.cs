@@ -53,7 +53,7 @@ public class EndingCutscene : MonoBehaviour
 
         lights.SetActive(false);
 
-        yield return PrintText("Looks like it's my turn to perform.");
+        yield return PrintText("Looks like it's my turn to go up on stage.");
         while(!Input.GetButtonDown("Fire1"))
         {
             yield return null;
