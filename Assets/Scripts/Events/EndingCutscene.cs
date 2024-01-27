@@ -65,6 +65,6 @@ public class EndingCutscene : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(5);
 
-        //Load title screen
+        SceneManager.LoadScene("Title");
     }
 }
