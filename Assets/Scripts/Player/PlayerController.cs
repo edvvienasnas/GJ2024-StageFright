@@ -9,9 +9,12 @@ public class PlayerController : MonoBehaviour
     private Vector3 cameraOffset;
     private Camera playerCamera;
     private Animation weaponSwingAnim;
+    private Animator anim;
 
     private void Awake()
     {
+        anim = GetComponent<Animator>();
+
         playerCamera = FindFirstObjectByType<Camera>();
         weaponSwingAnim = weapon.GetComponent<Animation>();
 
@@ -26,6 +29,8 @@ public class PlayerController : MonoBehaviour
         // Player movement
         if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
         {
+            anim.SetBool("isWalking", true);
+
             var moveDirection = new Vector3(
                 Input.GetAxisRaw("Horizontal"),
                 0,
@@ -37,6 +42,10 @@ public class PlayerController : MonoBehaviour
             //     Input.GetAxisRaw("Horizontal") * movementSpeed * Time.deltaTime,
             //     0,
             //     Input.GetAxisRaw("Vertical") * movementSpeed * Time.deltaTime);
+        }
+        else if(Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
+        {
+            anim.SetBool("isWalking", false);
         }
 
         // Player attacking
