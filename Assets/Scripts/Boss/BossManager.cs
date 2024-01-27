@@ -6,39 +6,24 @@ using UnityEngine;
 public class BossManager : MonoBehaviour
 {
     [SerializeField] private float projectileMoveSpeed = 1;
-    [SerializeField] private List<Transform> projectiles;
+    [SerializeField] private List<Projectile> projectiles;
     [SerializeField] private Transform attackRange;
-
-    private List<Vector3> projectileStartingPos = new List<Vector3>();
-
-    private void Awake()
-    {
-        for(int i = 0; i < projectiles.Count; i++)
-        {
-            projectileStartingPos.Add(new Vector3());
-            projectileStartingPos[i] = projectiles[i].position;
-        }
-    }
-
-    private void Start()
-    {
-        
-    }
 
     private void Update()
     {
+        // Boss Attack
         for(int i = 0; i < projectiles.Count; i++)
         {
-            if(projectiles[i].position.z >= attackRange.position.z)
+            if(projectiles[i].transform.position.z >= attackRange.position.z)
             {
-                projectiles[i].position = new Vector3(
-                    projectiles[i].position.x, 
-                    projectiles[i].position.y, 
-                    projectiles[i].position.z - projectileMoveSpeed * Time.deltaTime);
+                projectiles[i].transform.position = new Vector3(
+                    projectiles[i].transform.position.x, 
+                    projectiles[i].transform.position.y, 
+                    projectiles[i].transform.position.z - projectileMoveSpeed * Time.deltaTime);
             }
             else
             {
-                projectiles[i].position = projectileStartingPos[i];
+                projectiles[i].transform.position = projectiles[i].startingPos;
             }
         }
     }

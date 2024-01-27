@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3569255288242690781}
   - component: {fileID: 991721873644805696}
+  - component: {fileID: 3291962217095909159}
   - component: {fileID: 2680108255613842758}
   - component: {fileID: 1390690510327277357}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,6 +51,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 8280244578652214978}
   movementSpeed: 10
+--- !u!114 &3291962217095909159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532882543705873612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37ce93e5031f3e0479940e55a3d7e0fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &2680108255613842758
 CapsuleCollider:
   m_ObjectHideFlags: 0
