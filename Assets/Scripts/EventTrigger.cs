@@ -11,10 +11,10 @@ public class EventTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Something is in trigger");
+        //Debug.Log("Something is in trigger");
         if(other.gameObject.name == "Player")
         {
-            Debug.Log("Player is in trigger");
+            //Debug.Log("Player is in trigger");
             textBox.SetActive(true);
             textBox.GetComponentInChildren<Text>().text = text;
             if(selectionBox != null)

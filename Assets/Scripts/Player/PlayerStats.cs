@@ -9,6 +9,7 @@ using UnityEngine.Rendering.Universal;
 public class PlayerStats : MonoBehaviour
 {
     [SerializeField] private int hp = 3;
+    public int strength = 1;
     [SerializeField] private List<Image> hpIndicator;
 
     private void Update()

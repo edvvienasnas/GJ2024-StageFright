@@ -12,12 +12,18 @@ public class BossManager : MonoBehaviour
     [SerializeField] private float projectileMoveSpeed = 1;
     [SerializeField] private Transform attackRange;
 
+    private PlayerStats playerStats;
     private int currentHp;
 
     private void Awake()
     {
+        playerStats = FindObjectOfType<PlayerStats>();
+
+        // Init boss HP
         healthBar.maxValue = maxHp;
         healthBar.value = maxHp;
+
+        currentHp = maxHp;
     }
 
     private void Update()
@@ -39,5 +45,14 @@ public class BossManager : MonoBehaviour
         }
     }
 
-
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Something in enemy trigger");
+        if(other.tag == "Player Weapon")
+        {
+            Debug.Log("Player Weapon in enemy trigger");
+            currentHp -= playerStats.strength;
+            healthBar.value = currentHp;
+        }
+    }
 }
