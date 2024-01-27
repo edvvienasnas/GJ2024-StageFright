@@ -48,7 +48,7 @@ public class IntroCutscene : MonoBehaviour
         nextIndicator.gameObject.SetActive(false);
         yield return new WaitForEndOfFrame();
 
-        yield return PrintText("One day, I'm going to be the best stand up comedian ever!");
+        yield return PrintText("One day, I'm going to be the best stand-up comedian ever!");
 
         while(!Input.GetButtonDown("Fire1"))
         {

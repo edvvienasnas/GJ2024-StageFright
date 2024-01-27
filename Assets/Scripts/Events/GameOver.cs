@@ -40,7 +40,7 @@ public class GameOver : MonoBehaviour
 
         fadeout.SetActive(true);
 
-        yield return PrintText("YOU WILL NEVER BE A STANDUP COMEDIAN!", 0.1f);
+        yield return PrintText("YOU WILL NEVER BE A STAND-UP COMEDIAN!", 0.1f);
         while(!Input.GetButtonDown("Fire1"))
         {
             yield return null;

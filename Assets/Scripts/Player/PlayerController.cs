@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private Animation weaponSwingAnim;
     private Animator anim;
 
+    private Vector3 moveDirection = Vector3.zero;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -31,17 +33,13 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("isWalking", true);
 
-            var moveDirection = new Vector3(
+            moveDirection = new Vector3(
                 Input.GetAxisRaw("Horizontal"),
                 0,
                 Input.GetAxisRaw("Vertical"));
 
             transform.Translate(moveDirection * movementSpeed * Time.deltaTime, Space.World);
             transform.rotation = Quaternion.LookRotation(moveDirection, Vector3.up);
-            // transform.position += new Vector3(
-            //     Input.GetAxisRaw("Horizontal") * movementSpeed * Time.deltaTime,
-            //     0,
-            //     Input.GetAxisRaw("Vertical") * movementSpeed * Time.deltaTime);
         }
         else if(Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
         {
