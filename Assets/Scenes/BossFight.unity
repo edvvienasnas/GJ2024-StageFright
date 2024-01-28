@@ -1678,6 +1678,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2000989188}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1030591431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4287882565866987973, guid: e14192190e5a05e4aa97be7afe854a1c,
+    type: 3}
+  m_PrefabInstance: {fileID: 9087142795961705992}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &1030591434
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030591431}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.6
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1219588634
 GameObject:
   m_ObjectHideFlags: 0
@@ -2154,7 +2181,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2207,7 +2234,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 20
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -7948,7 +7975,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -8001,7 +8028,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 20
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -13172,7 +13199,7 @@ PrefabInstance:
     - target: {fileID: 3291962217095909159, guid: 6a154c50d10977a4f83ee0e2db999d47,
         type: 3}
       propertyPath: strength
-      value: 25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3291962217095909159, guid: 6a154c50d10977a4f83ee0e2db999d47,
         type: 3}
@@ -13470,7 +13497,7 @@ PrefabInstance:
     - target: {fileID: 2019408707946343020, guid: e14192190e5a05e4aa97be7afe854a1c,
         type: 3}
       propertyPath: maxHp
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2019408707946343020, guid: e14192190e5a05e4aa97be7afe854a1c,
         type: 3}
@@ -13495,7 +13522,7 @@ PrefabInstance:
     - target: {fileID: 2019408707946343020, guid: e14192190e5a05e4aa97be7afe854a1c,
         type: 3}
       propertyPath: attackFrequency
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2019408707946343020, guid: e14192190e5a05e4aa97be7afe854a1c,
         type: 3}
@@ -13579,6 +13606,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2917203905949795232, guid: e14192190e5a05e4aa97be7afe854a1c,
         type: 3}
+      propertyPath: m_Radius
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917203905949795232, guid: e14192190e5a05e4aa97be7afe854a1c,
+        type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -13604,7 +13636,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1431532500}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4287882565866987973, guid: e14192190e5a05e4aa97be7afe854a1c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1030591434}
   m_SourcePrefab: {fileID: 100100000, guid: e14192190e5a05e4aa97be7afe854a1c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
