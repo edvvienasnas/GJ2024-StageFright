@@ -39,7 +39,7 @@ public class IntroCutscene : MonoBehaviour
     private IEnumerator PlayIntroCutscene()
     {
         textBox.SetActive(true);
-        yield return PrintText("Comedy is the best.");
+        yield return PrintText("I love making people laugh.");
         
         while(!Input.GetButtonDown("Fire1"))
         {
@@ -48,7 +48,7 @@ public class IntroCutscene : MonoBehaviour
         nextIndicator.gameObject.SetActive(false);
         yield return new WaitForEndOfFrame();
 
-        yield return PrintText("One day, I'm going to be the best stand-up comedian ever!");
+        yield return PrintText("Someday I'll be the greatest stand-up comedian ever!");
 
         while(!Input.GetButtonDown("Fire1"))
         {
