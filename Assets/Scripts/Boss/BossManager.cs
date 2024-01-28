@@ -20,10 +20,10 @@ public class BossManager : MonoBehaviour
     private float baseAttackFrequency;
 
     private PlayerStats playerStats;
-    private int currentHp;
+    [HideInInspector] public int currentHp;
     private bool isDead;
 
-    private void Awake()
+    private void Start()
     {
         baseAttackFrequency = attackFrequency;
         attackFrequency = 0.5f;
@@ -33,9 +33,7 @@ public class BossManager : MonoBehaviour
 
         // Init boss HP
         healthBar.maxValue = maxHp;
-        healthBar.value = maxHp;
-
-        currentHp = maxHp;
+        healthBar.value = currentHp;
     }
 
     private void Update()

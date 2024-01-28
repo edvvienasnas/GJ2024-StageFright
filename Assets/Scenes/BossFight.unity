@@ -1072,6 +1072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17164b8b092dadd48a1e0fe4e013cb37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHp: {fileID: 1296206455}
   textBox: {fileID: 343454398}
   text: {fileID: 646182255}
   nextIndicator: {fileID: 301603696}
@@ -1851,6 +1852,56 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1296206455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6046812464047985106, guid: dc848a3400fe0b2429a23f8482b80162,
+    type: 3}
+  m_PrefabInstance: {fileID: 2291084216889346073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1303498033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1303498034}
+  - component: {fileID: 1303498035}
+  m_Layer: 0
+  m_Name: BattleStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1303498034
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303498033}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.381966, y: -1.192531, z: 21.411932}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1303498035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303498033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3519b0d71ceae24bb42992f924d989d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1321104260
@@ -2873,7 +2924,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 180
+      value: 360
       mode: 0
       spread: 0
       speed:
@@ -2935,7 +2986,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 20
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -8729,7 +8780,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -13497,7 +13548,7 @@ PrefabInstance:
     - target: {fileID: 2019408707946343020, guid: e14192190e5a05e4aa97be7afe854a1c,
         type: 3}
       propertyPath: maxHp
-      value: 200
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2019408707946343020, guid: e14192190e5a05e4aa97be7afe854a1c,
         type: 3}
@@ -13662,3 +13713,4 @@ SceneRoots:
   - {fileID: 154058209}
   - {fileID: 761379657}
   - {fileID: 610508071}
+  - {fileID: 1303498034}
