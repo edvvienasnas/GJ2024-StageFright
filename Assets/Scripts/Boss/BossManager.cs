@@ -93,10 +93,8 @@ public class BossManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Something in enemy trigger");
         if(other.tag == "Player Weapon")
         {
-            Debug.Log("Player Weapon in enemy trigger");
             currentHp -= playerStats.strength;
             healthBar.value = currentHp;
         }

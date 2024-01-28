@@ -40,16 +40,12 @@ public class TextSystem : MonoBehaviour
 
     public void SelectionYes()
     {
-        Debug.Log("yes");
-
         textBox.SetActive(false);
         selectionBox.SetActive(false);
     }
 
     public void SelectionNo()
     {
-        Debug.Log("no");
-
         textBox.SetActive(false);
         selectionBox.SetActive(false);
     }

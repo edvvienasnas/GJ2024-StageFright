@@ -25,12 +25,18 @@ public class PlayerStats : MonoBehaviour
         if(hp <= 0 && !isDead)
         {
             isDead = true;
-            Debug.Log("You died");
             anim.SetTrigger("hasDied");
 
             GetComponent<PlayerController>().enabled = false;
 
             StartCoroutine(FindObjectOfType<GameOver>().PlayGameOver());
+        }
+
+        // Cheatcode
+        if(Input.GetKeyDown(KeyCode.LeftBracket))
+        {
+            strength = 25;
+            Debug.Log("Cheat activated");
         }
     }
 
@@ -40,7 +46,5 @@ public class PlayerStats : MonoBehaviour
         if(hp == 2) hpIndicator[2].enabled = false;
         else if(hp == 1) hpIndicator[1].enabled = false;
         else if(hp <= 0) hpIndicator[0].enabled = false;
-
-        Debug.Log("You got hit");
     }
 }
