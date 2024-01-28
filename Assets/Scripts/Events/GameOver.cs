@@ -29,6 +29,9 @@ public class GameOver : MonoBehaviour
 
     public IEnumerator PlayGameOver()
     {
+        // Stop Music
+        FindObjectOfType<AudioSource>().Stop();
+
         // Cutscene
         enemyHp.SetActive(false);
         textBox.SetActive(true);
