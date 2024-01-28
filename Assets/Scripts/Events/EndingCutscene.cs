@@ -35,7 +35,7 @@ public class EndingCutscene : MonoBehaviour
     {
         textBox.SetActive(true);
 
-        yield return PrintText("Umm... What was I so nervous about again?");
+        yield return PrintText("Oh... What was I so nervous about again?");
         while(!Input.GetButtonDown("Fire1"))
         {
             yield return null;
@@ -43,7 +43,7 @@ public class EndingCutscene : MonoBehaviour
         nextIndicator.gameObject.SetActive(false);
         yield return new WaitForEndOfFrame();
 
-        yield return PrintText("Oh, they're calling my name.");
+        yield return PrintText("Hey, they're calling my name.");
         while(!Input.GetButtonDown("Fire1"))
         {
             yield return null;
