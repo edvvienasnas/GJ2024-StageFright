@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 523b8de4abf66ce4ab6c29c1f2a86ad3,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -276,9 +277,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Game by edvinas
+  m_Text: 'game by edvvienasnas
 
-    LT Game Jam 2024'
+    LT GameJam 2024'
 --- !u!222 &832709031
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -449,6 +450,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3144f3363b1923489a1bbb2db883e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStrength: 1
+  bossHp: 500
 --- !u!4 &977399745
 Transform:
   m_ObjectHideFlags: 0
