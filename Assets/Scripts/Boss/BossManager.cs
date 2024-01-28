@@ -77,23 +77,6 @@ public class BossManager : MonoBehaviour
 
                 attackFrequency = baseAttackFrequency;
             }
-
-
-            // Old attack system
-            // for(int i = 0; i < projectiles.Count; i++)
-            // {
-            //     if(projectiles[i].transform.position.z >= attackRange.position.z)
-            //     {
-            //         projectiles[i].transform.position = new Vector3(
-            //             projectiles[i].transform.position.x, 
-            //             projectiles[i].transform.position.y, 
-            //             projectiles[i].transform.position.z - projectileMoveSpeed * Time.deltaTime);
-            //     }
-            //     else
-            //     {
-            //         projectiles[i].transform.position = projectiles[i].startingPos;
-            //     }
-            // }
         }
 
         // Boss Death

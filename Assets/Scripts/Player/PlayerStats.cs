@@ -34,16 +34,13 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnParticleCollision()
     {
-        if(other.tag == "Enemy")
-        {
-            hp--;
-            if(hp == 2) hpIndicator[2].enabled = false;
-            else if(hp == 1) hpIndicator[1].enabled = false;
-            else if(hp <= 0) hpIndicator[0].enabled = false;
+        hp--;
+        if(hp == 2) hpIndicator[2].enabled = false;
+        else if(hp == 1) hpIndicator[1].enabled = false;
+        else if(hp <= 0) hpIndicator[0].enabled = false;
 
-            Debug.Log("You got hit");
-        }
+        Debug.Log("You got hit");
     }
 }

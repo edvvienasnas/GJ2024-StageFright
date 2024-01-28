@@ -49,7 +49,7 @@ public class BossStartTrigger : MonoBehaviour
 
     public IEnumerator OpenDoorEvent()
     {
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(0.2f);
 
         SceneManager.LoadScene("BossFight");
     }
