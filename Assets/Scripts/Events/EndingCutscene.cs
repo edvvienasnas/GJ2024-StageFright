@@ -16,7 +16,7 @@ public class EndingCutscene : MonoBehaviour
         StartCoroutine(PlayEndingCutscene());
     }
 
-    private IEnumerator PrintText(string txt)
+    private IEnumerator PrintText(string txt, float textSpeed = 0.05f)
     {
         // Clear current textbox
         text.text = "";
@@ -25,7 +25,7 @@ public class EndingCutscene : MonoBehaviour
         {
             text.text = text.text + txt[i];
             //yield return null;
-            yield return new WaitForSecondsRealtime(0.05f);
+            yield return new WaitForSecondsRealtime(textSpeed);
         }
 
         nextIndicator.gameObject.SetActive(true);
@@ -54,6 +54,14 @@ public class EndingCutscene : MonoBehaviour
         lights.SetActive(false);
 
         yield return PrintText("Looks like it's my turn to go up on stage.");
+        while(!Input.GetButtonDown("Fire1"))
+        {
+            yield return null;
+        }
+        nextIndicator.gameObject.SetActive(false);
+        yield return new WaitForEndOfFrame();
+
+        yield return PrintText("Thanks for playing! The End", 0.2f);
         while(!Input.GetButtonDown("Fire1"))
         {
             yield return null;
